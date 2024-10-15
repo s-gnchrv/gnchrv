@@ -1,0 +1,47 @@
+.button {
+  display: inline-flex;
+  column-gap: 10px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+
+  svg {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    .icon_left {
+      transform: translateX(-5px);
+    }
+
+    .icon_right {
+      transform: translateX(5px);
+    }
+  }
+
+  .button__content {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    svg {
+      color: #51b215;
+    }
+  }
+}
+
+.button_small {
+  column-gap: 7px;
+  font-size: 16px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .button__content {
+    column-gap: 7px;
+  }
+}

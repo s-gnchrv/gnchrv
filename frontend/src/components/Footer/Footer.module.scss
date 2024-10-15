@@ -1,0 +1,22 @@
+.footer {
+  margin-top: 70px;
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer__name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.footer__contacts {
+  ul {
+    display: flex;
+    column-gap: 35px;
+  }
+}

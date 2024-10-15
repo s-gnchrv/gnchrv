@@ -1,0 +1,23 @@
+.button {
+    align-items: center;
+    background-color: #51B215;
+    border-radius: 15px;
+    box-shadow: 2px 4px 0px #439A0D;
+    color: #FFFFFF;
+    column-gap: 10px;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 40px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        // background-color: #439A0D;
+        // box-shadow: 1px 2px 5px #367b0b;
+        padding: 14px 45px;
+    }
+
+    svg {
+        height: 25px;
+    }
+}

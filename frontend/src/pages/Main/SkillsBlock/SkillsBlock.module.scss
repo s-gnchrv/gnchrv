@@ -1,0 +1,66 @@
+.skills__content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(2, auto) 1fr;
+  gap: 60px 50px;
+}
+
+.skills_level {
+  grid-row: 1/4;
+
+  display: grid;
+  grid-template-columns: repeat(2, 245px);
+  gap: 50px;
+  align-content: start;
+}
+
+.skills_level__skill {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.skills_level__name {
+  color: #646464;
+  font-size: 16px;
+}
+
+.skills_level__level {
+  display: flex;
+  gap: 5px;
+  // width: 245px;
+  margin-top: 15px;
+
+  div {
+    background-color: #a3a3a3;
+    border-radius: 15px;
+    flex: 1;
+    height: 5px;
+
+    &.active {
+      background-color: #51b215;
+    }
+  }
+}
+
+.skills__list_block {
+  p {
+    color: #646464;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  ul {
+    margin-top: 15px;
+
+    li {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

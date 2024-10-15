@@ -1,0 +1,26 @@
+.layout {
+  display: flex;
+  column-gap: 70px;
+  align-items: center;
+
+  @media (max-width: 1170px) {
+    column-gap: 50px;
+  }
+}
+
+.layout__photo {
+  img {
+    border-radius: 15px;
+    width: 430px;
+    aspect-ratio: 43/57;
+    object-fit: cover;
+
+    @media (max-width: 1170px) {
+      width: 400px;
+    }
+
+    @media (max-width: 1065px) {
+      width: 350px;
+    }
+  }
+}

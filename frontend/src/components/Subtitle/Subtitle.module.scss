@@ -1,0 +1,17 @@
+.subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.subtitle_underlined::after {
+  content: "";
+  background-color: #51b215;
+  border-radius: 15px;
+  width: 25px;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}

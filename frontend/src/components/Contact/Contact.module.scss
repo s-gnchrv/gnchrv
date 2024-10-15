@@ -1,0 +1,14 @@
+.contact {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+
+    svg {
+        color: #51B215;
+        height: 20px;
+    }
+
+    a {
+        font-size: 16px;
+    }
+}

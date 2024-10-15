@@ -1,0 +1,15 @@
+.technologies {
+  ul {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+
+    li {
+      border: 1px solid #a3a3a3;
+      border-radius: 15px;
+      color: #a3a3a3;
+      // font-weight: 300;
+      padding: 3px 15px;
+    }
+  }
+}
