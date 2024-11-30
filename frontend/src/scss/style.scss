@@ -1,26 +1,26 @@
-@import './lib/reset';
-@import './fonts';
+@import "./lib/reset";
+@import "./fonts";
 
 html * {
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
-    width: calc(100vw - 100px);
-    max-width: 1180px;
-    margin: 0 auto;
+  width: calc(100vw - 100px);
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
 .block {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
 .icon-fill {
-    fill: #51B215;
+  fill: #51b215;
 }
 
 #root {
-    min-height: 100vh;
-    position: relative;
-    padding-bottom: 130px;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 130px;
 }
