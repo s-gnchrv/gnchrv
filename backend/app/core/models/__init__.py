@@ -1,5 +1,7 @@
 __all__ = (
-    "db_helper"
+    "db_helper",
+    "Base"
 )
 
-from core.models.db_helper import db_helper
+from .db_helper import db_helper
+from .base import Base
