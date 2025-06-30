@@ -15,7 +15,7 @@ class DatabaseHelper:
             pool_size: int = 5,
     ) -> None:
         self.engine: AsyncEngine = create_async_engine(
-            url=url, # postgresql+asyncpg://postgres:postgres@localhost:5432/postgres
+            url=url,
             echo=echo,
             echo_pool=echo_pool,
             max_overflow=max_overflow,
