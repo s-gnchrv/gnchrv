@@ -16,7 +16,7 @@ class DatabaseConfig(BaseModel):
     max_overflow: int = 10
     pool_size: int = 50
 
-    naming_conventions: dict[str, str] = {
+    naming_convention: dict[str, str] = {
       "ix": "ix_%(column_0_label)s",
       "uq": "uq_%(table_name)s_%(column_0_name)s",
       "ck": "ck_%(table_name)s_%(constraint_name)s",
