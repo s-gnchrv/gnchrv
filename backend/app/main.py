@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
+from sqladmin import Admin
 
 from core.config import settings
 
@@ -26,6 +27,8 @@ main_app.include_router(
     api_router,
     prefix=settings.api.prefix,
     )
+
+admin = Admin(main_app, db_helper.engine)
 
 if __name__ == "__main__":
     uvicorn.run("main:main_app",
