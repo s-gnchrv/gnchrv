@@ -14,4 +14,4 @@ class ProjectDetail(IntIdPkMixin, Base):
     project: Mapped["Project"] = relationship(back_populates="details")
 
     def __str__(self):
-        return self.project + ": " + self.title
+        return self.title
