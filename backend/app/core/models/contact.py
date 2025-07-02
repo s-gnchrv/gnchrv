@@ -9,3 +9,6 @@ class Contact(IntIdPkMixin, Base):
     type: Mapped[str] = mapped_column(unique=True)
     nickname: Mapped[str] = mapped_column()
     link: Mapped[str] = mapped_column()
+
+    def __str__(self):
+        return self.title

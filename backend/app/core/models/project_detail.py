@@ -12,3 +12,6 @@ class ProjectDetail(IntIdPkMixin, Base):
     image: Mapped[str] = mapped_column()
     project_id: Mapped[int] = mapped_column(ForeignKey('projects.id'))
     project: Mapped["Project"] = relationship(back_populates="details")
+
+    def __str__(self):
+        return self.project + ": " + self.title

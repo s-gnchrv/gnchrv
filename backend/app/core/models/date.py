@@ -12,3 +12,6 @@ class Date(IntIdPkMixin, Base):
     end: Mapped[Optional[int]] = mapped_column(nullable=True)
     title: Mapped[str] = mapped_column()
     description: Mapped[str] = mapped_column()
+
+    def __str__(self):
+        return self.title

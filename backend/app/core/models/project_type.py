@@ -10,3 +10,6 @@ class ProjectType(IntIdPkMixin, Base):
     title_plural: Mapped[str] = mapped_column()
 
     projects: Mapped["Project"] = relationship(back_populates="type")
+
+    def __str__(self):
+        return self.title

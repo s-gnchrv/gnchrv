@@ -9,3 +9,6 @@ class TechCategory(IntIdPkMixin, Base):
     title: Mapped[str] = mapped_column()
 
     technologies: Mapped[list["Technology"]] = relationship(back_populates="category")
+
+    def __str__(self):
+        return self.title

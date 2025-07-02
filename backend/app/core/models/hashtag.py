@@ -8,3 +8,6 @@ class HashTag(IntIdPkMixin, Base):
     __tablename__ = 'hashtags'
     title: Mapped[str] = mapped_column(unique=True)
     order: Mapped[int] = mapped_column(default=0)
+
+    def __str__(self):
+        return self.title

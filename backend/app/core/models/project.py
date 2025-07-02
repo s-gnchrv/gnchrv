@@ -25,3 +25,6 @@ class Project(IntIdPkMixin, Base):
         secondary="project_technology_association",
         back_populates="projects"
     )
+
+    def __str__(self):
+        return self.title

@@ -19,3 +19,6 @@ class Technology(IntIdPkMixin, Base):
         secondary="project_technology_association",
         back_populates="technologies"
     )
+
+    def __str__(self):
+        return self.title

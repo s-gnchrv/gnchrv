@@ -9,3 +9,6 @@ class Content(IntIdPkMixin, Base):
     __tablename__ = 'content'
     key: Mapped[str] = mapped_column(unique=True)
     value: Mapped[str] = mapped_column(Text)
+
+    def __str__(self):
+        return self.key

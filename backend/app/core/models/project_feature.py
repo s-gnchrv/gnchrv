@@ -10,3 +10,6 @@ class ProjectFeature(IntIdPkMixin, Base):
     title: Mapped[str] = mapped_column()
     project_id: Mapped[int] = mapped_column(ForeignKey('projects.id'))
     project: Mapped["Project"] = relationship(back_populates="features")
+
+    def __str__(self):
+        return self.project + ": " + self.title

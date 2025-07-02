@@ -7,3 +7,6 @@ from .mixins.int_id_pk import IntIdPkMixin
 class SoftSkill(IntIdPkMixin, Base):
     __tablename__ = 'soft_skills'
     title: Mapped[str] = mapped_column()
+
+    def __str__(self):
+        return self.title
