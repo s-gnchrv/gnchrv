@@ -4,19 +4,14 @@ services:
     nginx:
         container_name: nginx
         build:
-            context: ./frontend/
+            context: .
+            dockerfile: frontend/Dockerfile
         ports:
-            - 80:80
-            - 433:433
+            - 3000:80
         restart: always
         volumes:
-            - ./certbot/www/:/var/www/certbot/:ro
-            - ./certbot/conf/:/etc/nginx/ssl/:ro
-    certbot:
-        image: certbot/certbot
-        volumes:
-            - ./certbot/www/:/var/www/certbot/:rw
-            - ./certbot/conf/:/etc/letsencript:rw
+            - ./nginx/dev.conf:/etc/nginx/conf.d/custom.conf:ro
+
     # pg:
     #     image: postgres:alpine
     #     restart: always
