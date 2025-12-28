@@ -1,32 +1,32 @@
 services:
+    frontend:
+        container_name: frontend
+        build:
+            context: ./frontend
+        volumes:
+          - frontend_dist:/app/dist:rw
+    
+    backend:
+        container_name: backend
+        build:
+            context: ./backend
+        restart: always
+        
     nginx:
         container_name: nginx
         build:
-            context: .
-            dockerfile: frontend/Dockerfile
+            context: ./nginx
         ports:
-            - 3000:80
+            - "3000:3000"
+            - "3001:3001"
         restart: always
         volumes:
             - ./nginx/dev.conf:/etc/nginx/conf.d/custom.conf:ro
+            - frontend_dist:/usr/share/nginx/html:ro
+        depends_on:
+            - frontend
+            - backend
 
-    # pg:
-    #     image: postgres:alpine
-    #     restart: always
-    #     environment:
-    #         POSTGRES_USER: user
-    #         POSTGRES_PASSWORD: password
-    #         POSTGRES_DB: gnchrv
-    #         PGDATA: /var/lib/postgresql/data/pgdata
-    #     ports:
-    #         - 5432:5432
-    #     volumes:
-    #         - ./pgdata:/var/lib/postgresql/data/pgdata
-    # adminer:
-    #     image: adminer
-    #     ports:
-    #         - 8080:8080
-
-    # volumes:
-    #     pgdata:
-    #         driver: local
+volumes:
+    frontend_dist:
+        name: frontend_dist
