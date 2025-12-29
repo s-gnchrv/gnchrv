@@ -10,7 +10,7 @@ services:
         container_name: backend
         build:
             context: ./backend
-        restart: always
+        restart: unless-stopped
         
     nginx:
         container_name: nginx
@@ -19,7 +19,7 @@ services:
         ports:
             - "3000:3000"
             - "3001:3001"
-        restart: always
+        restart: unless-stopped
         volumes:
             - ./nginx/dev.conf:/etc/nginx/conf.d/custom.conf:ro
             - frontend_build:/usr/share/nginx/html:ro
