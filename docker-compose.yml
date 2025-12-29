@@ -4,7 +4,7 @@ services:
         build:
             context: ./frontend
         volumes:
-          - frontend_dist:/app/dist:rw
+          - frontend_build:/app/dist:rw
     
     backend:
         container_name: backend
@@ -22,11 +22,11 @@ services:
         restart: always
         volumes:
             - ./nginx/dev.conf:/etc/nginx/conf.d/custom.conf:ro
-            - frontend_dist:/usr/share/nginx/html:ro
+            - frontend_build:/usr/share/nginx/html:ro
         depends_on:
             - frontend
             - backend
 
 volumes:
-    frontend_dist:
+    frontend_build:
         name: frontend_dist
