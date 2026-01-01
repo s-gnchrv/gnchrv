@@ -1,4 +1,17 @@
 services:
+    postgres:
+        image: postgres:18.1-alpine
+        # container_name: postgres
+        restart: unless-stopped
+        environment:
+            POSTGRES_DB: ${DB_NAME}
+            POSTGRES_USER: ${DB_USER}
+            POSTGRES_PASSWORD: ${DB_PASSWORD}
+        volumes:
+          - pg_data:/var/lib/postgresql/data
+        ports:
+            - "5432:5432"
+
     frontend:
         container_name: frontend
         build:
@@ -11,6 +24,8 @@ services:
         build:
             context: ./backend
         restart: unless-stopped
+        depends_on:
+            - postgres
         
     nginx:
         container_name: nginx
@@ -26,7 +41,7 @@ services:
         depends_on:
             - frontend
             - backend
-
+        
 volumes:
     frontend_build:
-        name: frontend_dist
+    pg_data:
